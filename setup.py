@@ -9,7 +9,7 @@ setuptools.setup(
     version='0.0.1',
     author='Ivan Zlatanov',
     author_email='i_zlatanpv@protonmail.com',
-    description='',
+    description='Pythod is a lightweigh Python directory organizing CLI tool.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/not-so-cool-anymore/pythod',
