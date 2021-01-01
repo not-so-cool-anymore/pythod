@@ -1,8 +1,8 @@
 import setuptools
 
+
 with open('README.md') as readme:
     long_description = readme.read()
-
 
 setuptools.setup(
     name='pythod',
