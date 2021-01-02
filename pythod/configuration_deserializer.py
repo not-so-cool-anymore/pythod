@@ -15,7 +15,7 @@ class ConfigurationDeserializer(object):
 
         return configuration
 
-    def __decode_configuration(self, configuration_json):
+    def __decode_configuration(self, configuration_json) -> Configuration:
         contents = list()
         if 'contents' in configuration_json:
             for content in configuration_json['contents']:

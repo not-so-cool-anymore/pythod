@@ -9,13 +9,13 @@ def main():
 
     parser.add_argument(
         "--config",
+        nargs="?",
         type=str,
         help="Path to your custom configuration file. If no passed, will load the default one.",
     )
 
     parser.add_argument(
         "--dir",
-        nargs="?",
         type=str,
         help="Path to the directory that will be organized.",
     )
@@ -27,3 +27,6 @@ def main():
 
     organizer = Organizer(cli_arguments.dir, cli_arguments.config)
     organizer.organize()
+
+
+main()
