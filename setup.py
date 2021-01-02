@@ -23,7 +23,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     entry_points={
         'console_scripts': [
-            'pythod = pythid.main:main',
+            'pythod = pythod.main:main',
         ]
     },
     classifiers=[

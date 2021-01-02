@@ -61,7 +61,10 @@ class Organizer():
                 ))
 
     def __load_configuration(self):
-        deserializer = ConfigurationDeserializer()
+        if self.__configuration_path == None:
+            self.__configuration_path = './config.json'
+
+        deserializer = ConfigurationDeserializer(self.__configuration_path)
         configuration = deserializer.deserialize()
 
         return configuration
