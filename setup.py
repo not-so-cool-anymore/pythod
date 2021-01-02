@@ -16,6 +16,10 @@ setuptools.setup(
     package_dir={
         'pythod': 'pythod'
     },
+    package_data={
+        '': ['pythod/config.json']
+    },
+    include_package_data=True,
     packages=setuptools.find_packages(),
     entry_points={
         'console_scripts': [
@@ -27,5 +31,5 @@ setuptools.setup(
         "License :: OSI Approved :: GNU License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6'
+    python_requires='>=3.5'
 )
