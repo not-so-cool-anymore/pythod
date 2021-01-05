@@ -17,7 +17,7 @@ setuptools.setup(
         'pythod': 'pythod'
     },
     package_data={
-        '': ['pythod/config.json']
+        '': ['config.json']
     },
     include_package_data=True,
     packages=setuptools.find_packages(),
