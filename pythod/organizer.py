@@ -2,6 +2,7 @@ from .configuration_deserializer import ConfigurationDeserializer
 import os
 import shutil
 
+
 class Organizer():
     def __init__(self, org_directory, configuration_path=None):
         self.__org_directory = org_directory
@@ -10,7 +11,6 @@ class Organizer():
     def organize(self):
         configuration = self.__load_configuration()
         self.__build_target_directories(configuration)
-
 
         for root, dirs, files in os.walk(self.__org_directory):
             for _dir in dirs:
@@ -37,6 +37,7 @@ class Organizer():
                         os.path.join(self.__org_directory, _file),
                         os.path.join(self.__org_directory, target_directory)
                     )
+            break
 
     def __move_object(self, source, target):
         shutil.move(source, target)
@@ -53,8 +54,7 @@ class Organizer():
 
     def __build_target_directories(self, configuration):
         for content in configuration.contents:
-            print('>>> Content class {} will use directory {}.'.format(
-                content.get_content_class(),
+            print('>>> Created content directory {}.'.format(
                 content.get_target_directory()
             ))
 

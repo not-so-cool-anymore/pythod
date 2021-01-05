@@ -5,7 +5,10 @@ from .organizer import Organizer
 def main():
 
     parser = argparse.ArgumentParser(
-        description="Load CLI flags for the Pythod organizer.")
+        prog="pythod",
+        description="Load CLI flags for the Pythod organizer.",
+        usage="pythod --dir /directory/to/organizer"
+        )
 
     parser.add_argument(
         "--config",
