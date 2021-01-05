@@ -21,7 +21,7 @@ class ConfigurationDeserializer(object):
             for content in configuration_json['contents']:
                 _content = Content(
                     content['content_class'],
-                    content['indicators'],
+                    tuple(content['indicators']),
                     content['target_directory']
                 )
 

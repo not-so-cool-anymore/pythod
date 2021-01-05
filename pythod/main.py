@@ -18,6 +18,7 @@ def main():
         "--dir",
         type=str,
         help="Path to the directory that will be organized.",
+        required=True
     )
 
     cli_arguments = parser.parse_args()

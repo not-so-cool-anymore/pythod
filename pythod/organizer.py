@@ -2,7 +2,6 @@ from .configuration_deserializer import ConfigurationDeserializer
 import os
 import shutil
 
-
 class Organizer():
     def __init__(self, org_directory, configuration_path=None):
         self.__org_directory = org_directory
@@ -39,7 +38,7 @@ class Organizer():
         shutil.move(source, target)
 
     def __get_target_directory(self, configuration, element, is_directory=False):
-        for content in configuration:
+        for content in configuration.contents:
             if not is_directory and element.endswith(content.get_indicators()):
                 return content.get_target_directory()
             elif is_directory and any(string in element for string in content.get_indicators()):
@@ -48,7 +47,7 @@ class Organizer():
         print('>>> Target directory not found for: {}'.format(element))
 
     def __build_target_directories(self, configuration):
-        for content in configuration:
+        for content in configuration.contents:
             print('>>> Content class {} will use directory {}.'.format(
                 content.get_content_class(),
                 content.get_target_directory()
@@ -62,9 +61,14 @@ class Organizer():
 
     def __load_configuration(self):
         if self.__configuration_path == None:
-            self.__configuration_path = './config.json'
+            current_dir = self.__get_current_directory_path()
+
+            self.__configuration_path = current_dir + '/config.json'
 
         deserializer = ConfigurationDeserializer(self.__configuration_path)
         configuration = deserializer.deserialize()
 
         return configuration
+
+    def __get_current_directory_path(self):
+        return os.path.dirname(os.path.abspath(__file__))
