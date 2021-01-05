@@ -9,6 +9,8 @@ class Organizer():
 
     def organize(self):
         configuration = self.__load_configuration()
+        self.__build_target_directories(configuration)
+
 
         for root, dirs, files in os.walk(self.__org_directory):
             for _dir in dirs:
@@ -18,10 +20,11 @@ class Organizer():
                     True
                 )
 
-                self.__move_object(
-                    os.path.join(self.__org_directory, _dir),
-                    os.path.join(self.__org_directory, target_directory)
-                )
+                if target_directory != None:
+                    self.__move_object(
+                        os.path.join(self.__org_directory, _dir),
+                        os.path.join(self.__org_directory, target_directory)
+                    )
 
             for _file in files:
                 target_directory = self.__get_target_directory(
@@ -29,10 +32,11 @@ class Organizer():
                     _file
                 )
 
-                self.__move_object(
-                    os.path.join(self.__org_directory, _file),
-                    os.path.join(self.__org_directory, target_directory)
-                )
+                if target_directory != None:
+                    self.__move_object(
+                        os.path.join(self.__org_directory, _file),
+                        os.path.join(self.__org_directory, target_directory)
+                    )
 
     def __move_object(self, source, target):
         shutil.move(source, target)
@@ -45,6 +49,7 @@ class Organizer():
                 return content.get_target_directory()
 
         print('>>> Target directory not found for: {}'.format(element))
+        return None
 
     def __build_target_directories(self, configuration):
         for content in configuration.contents:
@@ -53,7 +58,7 @@ class Organizer():
                 content.get_target_directory()
             ))
 
-            if not os.path.isdir(content.get_target_directory()):
+            if not os.path.isdir(self.__org_directory + content.get_target_directory()):
                 os.mkdir(os.path.join(
                     self.__org_directory,
                     content.get_target_directory()

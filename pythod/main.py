@@ -28,6 +28,3 @@ def main():
 
     organizer = Organizer(cli_arguments.dir, cli_arguments.config)
     organizer.organize()
-
-
-main()
