@@ -2,6 +2,16 @@
 
 Pythod is a lightweigh Python 3 CLI directory organization tool.
 
+# Installation
+You can install Pythod either by cloning the repository with:
+
+```git clone https://github.com/not-so-cool-anymore/pythod.git```
+and then run `pip install .` inside the repository.
+
+Or you can install download and install it via Pip with:
+
+```pip install pythod```
+
 # Usage
 
 ## Configuration file
@@ -25,6 +35,9 @@ The format of the default configuration file is the following:
   ]
 }
 ```
+Where `content_class` indicates the type of object that would be moved and must be either `file` or `directory`.
+`target_directory` is the name of the directory in which files with matching content indicators will be moved.
+`content_indicators` is an array of strings which contains indicators about a specific set of files. For directories, it is part of their names, and for files - their file extensions.
 
 There is a default configuration file in the directory of the tool.
 The file contains the following:
