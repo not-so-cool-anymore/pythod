@@ -103,3 +103,11 @@ The file contains the following:
   ]
 }
 ```
+
+## CLI usage
+To use the tool type:
+
+```bash
+pythod --dir <PATH/TO/DIRECTORY/TO/ORGANIZE> --config <PATH/TO/CUSTOM/CONFIG/FILE>
+```
+Where `--dir` is required parameter and `--config` is optional. If `--config` is not provided, the default configuration will be loaded.
