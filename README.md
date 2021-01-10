@@ -2,6 +2,13 @@
 
 Pythod is a lightweigh Python 3 CLI directory organization tool.
 
+# Table of Contents
+
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+   - [Configuration file](#Configuration-file)
+   - [CLI Usage](#CLI-usage)
+
 # Installation
 
 You can install Pythod either by cloning the repository with:
@@ -79,7 +86,7 @@ The file contains the following:
     },
     {
       "content_class": "file",
-      "indicators": ["txt", "doc", "docx"],
+      "indicators": ["txt", "doc", "docx", "md"],
       "target_directory": "text_and_documents"
     },
     {
@@ -99,8 +106,29 @@ The file contains the following:
     },
     {
       "content_class": "directory",
-      "indicators": ["movie", "xvid", "brip", "dvdrip", "x264"],
+      "indicators": ["movie", "xvid", "brip", "dvdrip", "x264", "release"],
       "target_directory": "movies_and_videos"
+    },
+    {
+      "content_class": "file",
+      "indicators": [
+        "cpp",
+        "c",
+        "cs",
+        "py",
+        "go",
+        "java",
+        "lua",
+        "rpy",
+        "sh",
+        "bas",
+        "pl",
+        "r",
+        "swift",
+        "pas",
+        "asm"
+      ],
+      "target_directory": "source_files"
     }
   ]
 }
