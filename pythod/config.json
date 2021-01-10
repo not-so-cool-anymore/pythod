@@ -35,7 +35,8 @@
           "indicators":[
              "txt",
              "doc",
-             "docx"
+             "docx",
+             "md"
           ],
           "target_directory":"text_and_documents"
        },
@@ -71,7 +72,8 @@
              "xvid",
              "brip",
              "dvdrip",
-             "x264"
+             "x264",
+             "release"
           ],
           "target_directory":"movies_and_videos"
        },
@@ -83,7 +85,15 @@
             "cs",
             "py",
             "go",
-            "java"
+            "java",
+            "lua",
+            "rpy",
+            "sh",
+            "bas",
+            "pl",
+            "r",
+            "swift",
+            "pas"
          ],
          "target_directory":"source_files"
       }
