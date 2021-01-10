@@ -74,6 +74,18 @@
              "x264"
           ],
           "target_directory":"movies_and_videos"
-       }
+       },
+       {
+         "content_class":"file",
+         "indicators":[
+            "cpp",
+            "c",
+            "cs",
+            "py",
+            "go",
+            "java"
+         ],
+         "target_directory":"source_files"
+      }
     ]
  }
