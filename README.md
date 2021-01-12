@@ -1,6 +1,6 @@
 # Pythod
 
-Pythod is a lightweigh Python 3 CLI directory organization tool.
+![pythod](https://socialify.git.ci/not-so-cool-anymore/pythod/image?description=1&font=Raleway&language=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark)
 
 # Table of Contents
 
