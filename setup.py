@@ -1,6 +1,5 @@
 import setuptools
 
-
 with open('README.md') as readme:
     long_description = readme.read()
 
@@ -8,7 +7,7 @@ setuptools.setup(
     name='pythod',
     version='0.0.1',
     author='Ivan Zlatanov',
-    author_email='i_zlatanpv@protonmail.com',
+    author_email='i_zlatanov@protonmail.com',
     description='Pythod is a lightweigh Python directory organizing CLI tool.',
     long_description=long_description,
     long_description_content_type='text/markdown',
