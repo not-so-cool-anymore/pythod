@@ -19,7 +19,6 @@ class Organizer():
                     _dir,
                     True
                 )
-                print(_dir + ' will be sent to ' + target_directory)
 
                 if target_directory != None:
                     self.__move_object(
@@ -49,7 +48,6 @@ class Organizer():
             if not is_directory and element.endswith(content.get_indicators()):
                 return content.get_target_directory()
             elif is_directory and any(string in element for string in content.get_indicators()):
-                print(content.get_indicators())
                 return content.get_target_directory()
 
         print('>>> Target directory not found for: {}'.format(element))
@@ -57,23 +55,23 @@ class Organizer():
 
     def __build_target_directories(self, configuration):
         for content in configuration.contents:
-
-            print(self.__org_directory + '\'' + content.get_target_directory())
-            if not os.path.isdir(self.__org_directory + '\'' + content.get_target_directory()):
+            if not os.path.isdir(os.path.join(self.__org_directory, content.get_target_directory())):
                 os.mkdir(os.path.join(
                     self.__org_directory,
                     content.get_target_directory()
                 ))
 
                 print('>>> Created content directory {}.'.format(
-                    content.get_target_directory()
+                    os.path.join(self.__org_directory,
+                                 content.get_target_directory())
                 ))
 
     def __load_configuration(self):
         if self.__configuration_path == None:
             current_dir = self.__get_current_directory_path()
 
-            self.__configuration_path = current_dir + '/config.json'
+            self.__configuration_path = os.path.join(
+                current_dir, 'config.json')
 
         deserializer = ConfigurationDeserializer(self.__configuration_path)
         configuration = deserializer.deserialize()
