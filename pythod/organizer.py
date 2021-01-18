@@ -19,6 +19,7 @@ class Organizer():
                     _dir,
                     True
                 )
+                print(_dir + ' will be sent to ' + target_directory)
 
                 if target_directory != None:
                     self.__move_object(
@@ -48,6 +49,7 @@ class Organizer():
             if not is_directory and element.endswith(content.get_indicators()):
                 return content.get_target_directory()
             elif is_directory and any(string in element for string in content.get_indicators()):
+                print(content.get_indicators())
                 return content.get_target_directory()
 
         print('>>> Target directory not found for: {}'.format(element))
