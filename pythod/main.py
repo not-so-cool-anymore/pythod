@@ -7,8 +7,8 @@ def main():
     parser = argparse.ArgumentParser(
         prog="pythod",
         description="Load CLI flags for the Pythod organizer.",
-        usage="pythod --dir /directory/to/organizer"
-        )
+        usage="pythod --dir /absolute/path/to/directory/for/organizing"
+    )
 
     parser.add_argument(
         "--config",
