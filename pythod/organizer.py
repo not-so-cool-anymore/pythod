@@ -57,13 +57,15 @@ class Organizer():
 
     def __build_target_directories(self, configuration):
         for content in configuration.contents:
-            print('>>> Created content directory {}.'.format(
-                content.get_target_directory()
-            ))
 
+            print(self.__org_directory + '\'' + content.get_target_directory())
             if not os.path.isdir(self.__org_directory + '\'' + content.get_target_directory()):
                 os.mkdir(os.path.join(
                     self.__org_directory,
+                    content.get_target_directory()
+                ))
+
+                print('>>> Created content directory {}.'.format(
                     content.get_target_directory()
                 ))
 
