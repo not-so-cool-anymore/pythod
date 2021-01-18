@@ -22,8 +22,8 @@ class Organizer():
 
                 if target_directory != None:
                     self.__move_object(
-                        os.path.join(self.__org_directory, _dir),
-                        os.path.join(self.__org_directory, target_directory)
+                        os.path.join(root, _dir),
+                        os.path.join(root, target_directory)
                     )
 
             for _file in files:
@@ -34,9 +34,10 @@ class Organizer():
 
                 if target_directory != None:
                     self.__move_object(
-                        os.path.join(self.__org_directory, _file),
-                        os.path.join(self.__org_directory, target_directory)
+                        os.path.join(root, _file),
+                        os.path.join(root, target_directory)
                     )
+
             break
 
     def __move_object(self, source, target):
