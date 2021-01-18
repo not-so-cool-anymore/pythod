@@ -101,7 +101,7 @@ The file contains the following:
     },
     {
       "content_class": "file",
-      "indicators": ["exe", "bin"],
+      "indicators": ["exe", "bin", "msi"],
       "target_directory": "executables"
     },
     {
