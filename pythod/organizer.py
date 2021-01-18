@@ -59,7 +59,7 @@ class Organizer():
                 content.get_target_directory()
             ))
 
-            if not os.path.isdir(self.__org_directory + content.get_target_directory()):
+            if not os.path.isdir(self.__org_directory + '\'' + content.get_target_directory()):
                 os.mkdir(os.path.join(
                     self.__org_directory,
                     content.get_target_directory()
