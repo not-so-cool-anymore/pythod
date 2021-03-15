@@ -47,7 +47,7 @@ class Organizer():
         for content in configuration.contents:
             if not is_directory and element.endswith(content.get_indicators()):
                 return content.get_target_directory()
-            elif is_directory and any(string in element for string in content.get_indicators()):
+            elif is_directory and any(string in element for string in content.get_indicators()) and content.content_class == 'directory':
                 return content.get_target_directory()
 
         print('>>> Target directory not found for: {}'.format(element))
